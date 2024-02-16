@@ -11,6 +11,7 @@ const schema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Users'
     },
+    status: String,
     products: [],
     totalPrice: Number
 })

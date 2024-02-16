@@ -25,7 +25,7 @@ export const createOrder = async (req, res) => {
         acc += prev.price;
         return acc;
     }, 0);
-    let orderNumber = date.now() + Math.floor(Math.random() * 1000 + 1);
+    let orderNumber = Date.now() + Math.floor(Math.random() * 1000 + 1);
 
     let order = {
         number: orderNumber,

@@ -1,4 +1,4 @@
-import businessModel from '../models/users.model.js'
+import businessModel from '../models/business.model.js'
 
 export default class Business {
 

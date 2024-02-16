@@ -3,15 +3,16 @@ import usersRouter from "./routes/users.router.js";
 import businessRouter from "./routes/business.router.js";
 import ordersRouter from "./routes/orders.router.js";
 import mongoose from "mongoose";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: 'http://localhost:5500', methods: ['GET', 'POST', 'PUT'] }));
 
-const connection = mongoose.connect('url');
+const connection = mongoose.connect('');
 
-app.use('/api/usersRouter', usersRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/business', businessRouter);
 app.use('/api/orders', ordersRouter);
 
