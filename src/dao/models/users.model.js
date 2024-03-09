@@ -3,12 +3,16 @@ import mongoose from 'mongoose';
 const collection = 'Users';
 const schema = new mongoose.Schema({
     name: String,
-    email: String,
+    email: {
+        type: String,
+        unique: true
+    },
     role: String,
     orders: [
         {
             type: mongoose.SchemaTypes.ObjectId,
-            ref: 'Orders'
+            ref: 'Orders',
+            default: []
         }
     ]
 })

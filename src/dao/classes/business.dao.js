@@ -4,7 +4,7 @@ export default class Business {
 
     getBusiness = async () => {
         try {
-            let result = await businessModel.find();
+            let result = await businessModel.find().lean();
             return result;
         } catch (error) {
             console.log(error);

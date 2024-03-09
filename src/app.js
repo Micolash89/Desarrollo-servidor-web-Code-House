@@ -8,9 +8,9 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: 'http://localhost:5500', methods: ['GET', 'POST', 'PUT'] }));
+app.use(cors({ origin: 'http://localhost:5173', methods: ['GET', 'POST', 'PUT'] }));
 
-const connection = mongoose.connect('');
+const connection = mongoose.connect('mongodb+srv://admin:admin@cluster0.ucsa73j.mongodb.net/?retryWrites=true&w=majority');
 
 app.use('/api/users', usersRouter);
 app.use('/api/business', businessRouter);
