@@ -39,7 +39,8 @@ export const createOrder = async (req, res) => {
     let orderResult = await ordersService.createOrder(order);
     resultUser.orders.push(orderResult._id);
     await usersService.updateUser(user, resultUser);
-    res.send({ status: 'success', result: order });
+    //res.send({ status: 'success', result: order });//cambio a el resultado ya que en este viene el id creado por mongodb
+    res.send({ status: 'success', result: orderResult });
 }
 
 
